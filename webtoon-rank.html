@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Suannai" />
+    <meta
+      name="description"
+      content="隨時隨地都能盡情閱讀漫畫的KAKAO WEBTOON！加入KAKAO WEBTOON，每天免費觀賞各式各樣的漫畫。"
+    />
+    <meta name="robots" content="index, follow" />
+    <!-- 網頁開啟方式 -->
+    <base target="_self" />
+    <title>KAKAO WEBTOON</title>
+    <!-- 網頁icon -->
+    <link rel="shortcut icon" href="./img/kakao_icon.png" />
+    <link rel="bookmark" href="./img/kakao_icon.png" />
+    <!-- CSS樣式連結 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <style>
+      i {
+        font-size: larger;
+      }
+      bg-400 {
+        height: 400px;
+      }
+      .bg-cover {
+        background-size: cover;
+        background-position: top;
+      }
+      .an:hover {
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Icon & Search -->
+    <nav class="container">
+      <div class="pt-4 justify-content-between align-items-center row">
+        <div class="col-auto">
+          <a href="#"><i class="fa-solid fa-bell text-light"></i></a>
+        </div>
+        <div class="ms-auto col-auto">
+          <div class="row align-items-center justify-content-end">
+            <div class="col-auto">
+              <input
+                type="text"
+                class="form-control form-control-sm m-0 rounded-pill"
+                style="width: 150px"
+                aria-label="City"
+                data-bs-toggle="tooltip"
+                data-bs-html="true"
+                title="按下 Enter 快速搜尋"
+              />
+            </div>
+            <div class="col-auto">
+              <a href="#"
+                ><i class="fa-solid fa-magnifying-glass text-light"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <div class="container-fluid bg-black sticky-top">
+      <div class="container">
+        <nav
+          class="mt-3 navbar navbar-expand-md navbar-dark bg-black justify-content-center"
+        >
+          <div class="row w-100 justify-content-center">
+            <div
+              class="col-3 collapse navbar-collapse text-center p-0"
+              id="navbarNavAltMarkup"
+            >
+              <div class="navbar-nav justify-content-md-between w-100 fw-bold">
+                <a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-gift.html"
+                  >禮物盒</a
+                >
+                <a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-my.html"
+                  >我的漫畫</a
+                >
+              </div>
+            </div>
+            <div class="col-10 col-md-6 text-center">
+              <a
+                class="navbar-toggler border-0 ps-0 pe-1 pb-1 btn btn-black text-secondary"
+                href="#navbarNavAltMarkup"
+                data-bs-toggle="collapse"
+                ><i class="fa-solid fa-bars-staggered an"></i
+              ></a>
+              <a
+                class="btn btn-lg btn-black px-0 text-secondary an"
+                href="./webtoon.html"
+                style="font-weight: 1000"
+              >
+                KAKAO WEBTOON
+              </a>
+            </div>
+
+            <div
+              class="col-3 collapse navbar-collapse text-center p-0"
+              id="navbarNavAltMarkup"
+            >
+              <div class="navbar-nav justify-content-md-between w-100 fw-bold">
+                <a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-week.html"
+                  >星期列表</a
+                ><a
+                  class="nav-link px-0 active"
+                  aria-current="page"
+                  href="./webtoon-rank.html"
+                  >排行榜</a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Rank -->
+    <div class="container-fluid mt-3 d-flex flex-column align-items-center">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-9">
+          <div class="row">
+            <div
+              class="col-12 col-sm-8 bg-cover d-flex flex-column justify-content-between"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga1.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row p-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-danger rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 90px"
+                        ><span>1</span>
+                        <span
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-solid fa-caret-up pe-1 pt-1"
+                            style="color: rgba(255, 0, 0, 0)"
+                          ></i
+                          >-</span
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col-10">
+                  <div class="d-flex align-items-end mb-2">
+                    <h4 class="display-6 fw-bold text-light m-0 me-2">
+                      養育反派
+                    </h4>
+                    <small style="color: rgba(255, 255, 255, 0.5)">솔깃</small>
+                  </div>
+                  <p
+                    style="
+                      line-height: 1.2;
+                      font-size: small;
+                      color: rgba(255, 255, 255, 0.8);
+                    "
+                  >
+                    我成為了育幼院的老師，但這些孩子是未來的黑魔導師、黑暗公會的首領、瘋批皇帝⋯本打算不產生瓜葛，從育幼院悄悄溜走但⋯
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div
+              class="col-4 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga2.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>2</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-up pe-1 pt-1"
+                            style="color: rgba(255, 0, 0, 0.7)"
+                          ></i
+                          >3</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col-12 text-center">
+                  <h3 class="text-light m-0">皇女大人<br />很邪惡</h3>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >차소희 / 페가수스</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga3.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>3</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-down pe-1"
+                            style="color: rgba(0, 255, 0, 0.7)"
+                          ></i
+                          >2</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">惡女<br />Maker</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)">설이수</small>
+                </div>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga4.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>4</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-up pt-1 pe-1"
+                            style="color: rgba(255, 0, 0, 0.7)"
+                          ></i
+                          >7</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">死的是我<br />勇者卻瘋了</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >팔당댐 / 치와</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 5 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga5.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>5</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-up pt-1 pe-1"
+                            style="color: rgba(255, 0, 0, 0.7)"
+                          ></i
+                          >1</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">童話反派的<br />完美計畫</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >피치파이</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 6 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga6.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>6</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-down pe-1"
+                            style="color: rgba(0, 255, 0, 0.7)"
+                          ></i
+                          >3</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">女僕是個<br />純純小透明</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >허쉬하임 장편소설</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 7 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga7.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>7</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-up pt-1 pe-1"
+                            style="color: rgba(255, 0, 0, 0.7)"
+                          ></i
+                          >5</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">劍術天才<br />太陽劍客</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >카카오닙스</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 8 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga8.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>8</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-down pe-1"
+                            style="color: rgba(0, 255, 0, 0.7)"
+                          ></i
+                          >1</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">從什麼時候<br />開始切黑了</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >에크리튀</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 9 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga9.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>9</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-down pe-1"
+                            style="color: rgba(0, 255, 0, 0.7)"
+                          ></i
+                          >3</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">惡役大人<br />您找錯家啦</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >마르고트 / 바나나</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- 10 -->
+            <div
+              class="col-4 col-sm-3 bg-cover d-flex flex-column justify-content-between px-2"
+              style="
+                height: 350px;
+                z-index: -2;
+                background-image: url(./img/manga10.jpg);
+                position: relative;
+                border: black 2px solid;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: -1;
+                  width: 100%;
+                  height: 350px;
+                  background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    transparent 70%
+                  );
+                "
+              ></span>
+              <div class="row py-2">
+                <div class="col">
+                  <h4 class="display-1 fw-bold text-light">
+                    <h5>
+                      <span
+                        class="badge bg-dark rounded-pill justify-content-between d-flex align-items-center"
+                        style="width: 75px"
+                        ><small>10</small>
+                        <small
+                          class="align-items-center d-flex"
+                          style="color: rgba(255, 255, 255, 0.4)"
+                          ><i
+                            class="fa-xs fa-solid fa-caret-down pe-1"
+                            style="color: rgba(0, 255, 0, 0)"
+                          ></i
+                          >-</small
+                        ></span
+                      >
+                    </h5>
+                  </h4>
+                </div>
+              </div>
+              <div class="row py-2">
+                <div class="col text-center">
+                  <h4 class="text-light mb-0">誰來阻止<br />我的哥哥們</h4>
+                  <small style="color: rgba(255, 255, 255, 0.5)"
+                    >김다함 / SUKJA</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-3 text-center" style="background-color: black">
+      <img
+        style="height: 50px; opacity: 0.3"
+        src="./img/kakao_icon.png"
+        alt=""
+      />
+    </footer>
+    <!-- JS -->
+    <script
+      src="https://kit.fontawesome.com/c83333c7f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Tooltip
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    </script>
+  </body>
+</html>

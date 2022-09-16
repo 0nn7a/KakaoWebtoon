@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Suannai" />
+    <meta
+      name="description"
+      content="隨時隨地都能盡情閱讀漫畫的KAKAO WEBTOON！加入KAKAO WEBTOON，每天免費觀賞各式各樣的漫畫。"
+    />
+    <meta name="robots" content="index, follow" />
+    <!-- 網頁開啟方式 -->
+    <base target="_self" />
+    <title>KAKAO WEBTOON</title>
+    <!-- 網頁icon -->
+    <link rel="shortcut icon" href="./img/kakao_icon.png" />
+    <link rel="bookmark" href="./img/kakao_icon.png" />
+    <!-- CSS樣式連結 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <style>
+      i {
+        font-size: larger;
+      }
+      bg-400 {
+        height: 400px;
+      }
+      .box {
+        height: 200px;
+      }
+      .bg-cover {
+        background-size: cover;
+        background-position: center;
+      }
+      .an:hover {
+        color: white !important;
+      }
+      .bgan:hover {
+        background-color: rgb(46, 46, 46) !important;
+      }
+      .imageBox {
+        position: relative;
+        overflow: hidden;
+      }
+      .imageBox img {
+        width: 100%;
+        transition: 0.3s;
+      }
+      .textBox {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+      }
+      .textBox p {
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        color: #fff;
+      }
+      .imageBox:hover .textBox {
+        left: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Icon & Search -->
+    <nav class="container">
+      <div class="pt-4 justify-content-between align-items-center row">
+        <div class="col-auto">
+          <a href="#"><i class="fa-solid fa-bell text-light"></i></a>
+        </div>
+        <div class="ms-auto col-auto">
+          <div class="row align-items-center justify-content-end">
+            <div class="col-auto">
+              <input
+                type="text"
+                class="form-control form-control-sm m-0 rounded-pill"
+                style="width: 150px"
+                aria-label="City"
+                data-bs-toggle="tooltip"
+                data-bs-html="true"
+                title="按下 Enter 快速搜尋"
+              />
+            </div>
+            <div class="col-auto">
+              <a href="#"
+                ><i class="fa-solid fa-magnifying-glass text-light"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <div class="container-fluid bg-black sticky-top">
+      <div class="container">
+        <nav
+          class="mt-3 navbar navbar-expand-md navbar-dark bg-black justify-content-center"
+        >
+          <div class="row w-100 justify-content-center">
+            <div
+              class="col-3 collapse navbar-collapse text-center p-0"
+              id="navbarNavAltMarkup"
+            >
+              <div class="navbar-nav justify-content-md-between w-100 fw-bold">
+                <a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-gift.html"
+                  >禮物盒</a
+                >
+                <a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-my.html"
+                  >我的漫畫</a
+                >
+              </div>
+            </div>
+            <div class="col-10 col-md-6 text-center">
+              <a
+                class="navbar-toggler border-0 ps-0 pe-1 pb-1 btn btn-black text-secondary an"
+                href="#navbarNavAltMarkup"
+                data-bs-toggle="collapse"
+                ><i class="fa-solid fa-bars-staggered"></i
+              ></a>
+              <a
+                class="btn btn-lg btn-black px-0 text-light"
+                href="./webtoon.html"
+                style="font-weight: 1000"
+              >
+                KAKAO WEBTOON
+              </a>
+            </div>
+
+            <div
+              class="col-3 collapse navbar-collapse text-center p-0"
+              id="navbarNavAltMarkup"
+            >
+              <div class="navbar-nav justify-content-md-between w-100 fw-bold">
+                <a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-week.html"
+                  >星期列表</a
+                ><a
+                  class="nav-link px-0"
+                  aria-current="page"
+                  href="./webtoon-rank.html"
+                  >排行榜</a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Homepage -->
+    <div class="container-fluid container-lg mt-3 text-center">
+      <div class="d-flex justify-content-center">
+        <button
+          id="freebtn"
+          type="button"
+          class="btn btn-sm btn-light rounded-pill px-3 fw-bold me-1"
+          data-bs-toggle="collapse"
+          data-bs-target=".multi-collapse"
+        >
+          倒數免費
+        </button>
+        <button
+          id="recommendbtn"
+          type="button"
+          class="btn btn-sm btn-outline-light rounded-pill px-3 ms-1 fw-bold"
+          data-bs-toggle="collapse"
+          data-bs-target=".multi-collapse"
+        >
+          推薦
+        </button>
+      </div>
+
+      <div class="row mt-3 flex-column align-items-center">
+        <div class="col-md-9 col-12 p-0">
+          <div class="collapse show multi-collapse" id="free">
+            <small class="text-secondary"
+              >每2小時就可獲得
+              <span class="text-warning">倒數免費券</span
+              >，一天最多可有240話免費看</small
+            >
+            <div class="row row-cols-2 row-cols-sm-3 g-3 mt-3">
+              <!-- 1 -->
+              <div class="col">
+                <a
+                  href="#"
+                  class="card w-100 h-100 bgan"
+                  style="
+                    background-color: rgb(25, 25, 25);
+                    text-decoration: none;
+                  "
+                >
+                  <h6 class="mt-3 mb-0">
+                    <span
+                      class="badge border border-warning text-warning rounded-pill py-2 px-3"
+                      >每2小時免費看</span
+                    >
+                  </h6>
+                  <div class="card-body">
+                    <img src="./img/free-s1.jpg" class="w-100 shadow" alt="#" />
+                  </div>
+
+                  <div class="card-body pt-2 text-light text-start">
+                    <h5 class="card-title">反派女配角<br />生存大作戰</h5>
+                    <p
+                      class="text-secondary m-0"
+                      style="font-size: 12px; line-height: 1.3"
+                    >
+                      穿越小說成為主角妻子，想生存⋯就要跟他和平離婚！
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- 2 -->
+              <div class="col">
+                <a
+                  href="#"
+                  class="card w-100 h-100 bgan"
+                  style="
+                    background-color: rgb(25, 25, 25);
+                    text-decoration: none;
+                  "
+                >
+                  <h6 class="mt-3 mb-0">
+                    <span
+                      class="badge border border-warning text-warning rounded-pill py-2 px-3"
+                      >每2小時免費看</span
+                    >
+                  </h6>
+                  <div class="card-body">
+                    <img src="./img/free-s2.jpg" class="w-100 shadow" alt="#" />
+                  </div>
+
+                  <div class="card-body pt-2 text-light text-start">
+                    <h5 class="card-title">我把青梅竹馬<br />培育成暴君</h5>
+                    <p
+                      class="text-secondary m-0"
+                      style="font-size: 12px; line-height: 1.3"
+                    >
+                      就像小說裡的那樣，我替他頂罪，應該就可以回到現實世界了吧？
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- 3 -->
+              <div class="col">
+                <a
+                  href="#"
+                  class="card w-100 h-100 bgan align-items-center"
+                  style="
+                    background-color: rgb(25, 25, 25);
+                    text-decoration: none;
+                  "
+                >
+                  <h6 class="mt-3 mb-0">
+                    <span
+                      class="badge border border-warning text-warning rounded-pill py-2 px-3"
+                      >每2小時免費看</span
+                    >
+                  </h6>
+                  <div class="card-body">
+                    <img src="./img/free-s3.jpg" class="w-100 shadow" alt="#" />
+                  </div>
+                  <div class="card-body pt-2 text-light text-start">
+                    <h5 class="card-title">傳令鳥公主</h5>
+                    <p
+                      class="text-secondary m-0"
+                      style="font-size: 12px; line-height: 1.3"
+                    >
+                      八公主潔爾芮遭到敵軍綁架，醒來卻發現⋯自己變成鳥了？！
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- 4 -->
+              <div class="col">
+                <a
+                  href="#"
+                  class="card w-100 h-100 bgan"
+                  style="
+                    background-color: rgb(25, 25, 25);
+                    text-decoration: none;
+                  "
+                >
+                  <h6 class="mt-3 mb-0">
+                    <span
+                      class="badge border border-warning text-warning rounded-pill py-2 px-3"
+                      >每2小時免費看</span
+                    >
+                  </h6>
+                  <div class="card-body">
+                    <img src="./img/free-s4.jpg" class="w-100 shadow" alt="#" />
+                  </div>
+                  <div class="card-body pt-2 text-light text-start">
+                    <h5 class="card-title">當惡女戀愛時</h5>
+                    <p
+                      class="text-secondary m-0"
+                      style="font-size: 12px; line-height: 1.3"
+                    >
+                      我穿越成來日不多的惡女，沒關係，因為這個病可以治癒！我決定要先追星，見見我喜歡的那些小說人物們！
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- 5 -->
+              <div class="col">
+                <a
+                  href="#"
+                  class="card w-100 h-100 bgan"
+                  style="
+                    background-color: rgb(25, 25, 25);
+                    text-decoration: none;
+                  "
+                >
+                  <h6 class="mt-3 mb-0">
+                    <span
+                      class="badge border border-warning text-warning rounded-pill py-2 px-3"
+                      >每2小時免費看</span
+                    >
+                  </h6>
+                  <div class="card-body">
+                    <img src="./img/free-s5.jpg" class="w-100 shadow" alt="#" />
+                  </div>
+                  <div class="card-body pt-2 text-light text-start">
+                    <h5 class="card-title">仕女小姐想活命</h5>
+                    <p
+                      class="text-secondary m-0"
+                      style="font-size: 12px; line-height: 1.3"
+                    >
+                      只不過是煮著泡麵，下一秒竟發現自己進入BL小說，身為平凡仕女，究竟能不能平安活下去？
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- 6 -->
+              <div class="col">
+                <a
+                  href="#"
+                  class="card w-100 h-100 bgan"
+                  style="
+                    background-color: rgb(25, 25, 25);
+                    text-decoration: none;
+                  "
+                >
+                  <h6 class="mt-3 mb-0">
+                    <span
+                      class="badge border border-warning text-warning rounded-pill py-2 px-3"
+                      >每2小時免費看</span
+                    >
+                  </h6>
+                  <div class="card-body">
+                    <img src="./img/free-s6.jpg" class="w-100 shadow" alt="#" />
+                  </div>
+                  <div class="card-body pt-2 text-light text-start">
+                    <h5 class="card-title">為了保命的<br />分手宣言</h5>
+                    <p
+                      class="text-secondary m-0"
+                      style="font-size: 12px; line-height: 1.3"
+                    >
+                      在被債主追趕途中遇到交通意外死掉，居然轉世成小說裡的人物，但為什麼偏偏是惡女！
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse multi-collapse" id="recommend">
+            <div class="container-fluid d-flex flex-column align-items-center">
+              <h2 class="text-secondary w-100 fw-bold text-start">
+                新作<br />上架
+              </h2>
+
+              <div
+                id="carouselExampleControls"
+                class="carousel carousel-dark slide mt-4"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item middle-align active">
+                    <img src="./img/recom1.png" class="d-block w-100" alt="#" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/recom2.png" class="d-block w-100" alt="#" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/recom3.png" class="d-block w-100" alt="#" />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <h2 class="text-secondary w-100 mt-5 mb-4 fw-bold text-start">
+                新手<br />必看推薦
+              </h2>
+              <div class="row w-100">
+                <div class="col-12 imageBox p-0">
+                  <img src="./img/recom5.png" alt="#" />
+                  <div class="textBox p-0">
+                    <p class="box-2">
+                      <span class="h2">今生我來當家主<br /></span
+                      >歷經轉世加重生的我<br />這輩子一定要當上家主拯救家族！
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 imageBox p-0 mt-2">
+                  <img src="./img/recom4.png" alt="#" />
+                  <div class="textBox p-0">
+                    <p class="box-2">
+                      <span class="h2">災難級英雄歸來<br /></span
+                      >最強英雄落難20年終於歷劫歸來<br />「當初衝康我的混蛋們皮給我繃緊啦」
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 imageBox p-0 mt-2">
+                  <img src="./img/recom3.png" alt="#" />
+                  <div class="textBox p-0">
+                    <p class="box-2">
+                      <span class="h2">重迎曙光<br /></span
+                      >我被誣賴想毒殺妹妹而遭家人判處死刑<br />再次睜眼，竟得到了前世未有的寵愛
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 imageBox p-0 mt-2">
+                  <img src="./img/recom2.png" alt="#" />
+                  <div class="textBox p-0">
+                    <p class="box-2">
+                      <span class="h2">變成伯爵家的混混<br /></span
+                      >睜眼發現自己成了伯爵假的混混少爺<br />眼看即將海扁我一頓的崔漢就要來了⋯
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 imageBox p-0 mt-2">
+                  <img src="./img/recom1.png" alt="#" />
+                  <div class="textBox p-0">
+                    <p class="box-2">
+                      <span class="h2">兔子與黑豹的共生關係<br /></span
+                      >沒辦法變成人形的嬌弱兔子(?)獸人<br />對上不正常黑豹的猛獸巢穴生存記！
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-3 text-center" style="background-color: black">
+      <img
+        style="height: 50px; opacity: 0.3"
+        src="./img/kakao_icon.png"
+        alt=""
+      />
+    </footer>
+    <!-- JS -->
+    <script
+      src="https://kit.fontawesome.com/c83333c7f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Tooltip
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Switch button
+      var free = document.getElementById("free");
+      var freebtn = document.getElementById("freebtn");
+      var recommendbtn = document.getElementById("recommendbtn");
+      free.addEventListener("shown.bs.collapse", function () {
+        freebtn.setAttribute(
+          "class",
+          "btn btn-sm btn-light rounded-pill px-3 fw-bold me-1"
+        );
+        recommendbtn.setAttribute(
+          "class",
+          "btn btn-sm btn-outline-light rounded-pill px-3 fw-bold ms-1"
+        );
+      });
+      recommend.addEventListener("shown.bs.collapse", function () {
+        recommendbtn.setAttribute(
+          "class",
+          "btn btn-sm btn-light rounded-pill px-3 fw-bold ms-1"
+        );
+        freebtn.setAttribute(
+          "class",
+          "btn btn-sm btn-outline-light rounded-pill px-3 fw-bold me-1"
+        );
+      });
+    </script>
+  </body>
+</html>
